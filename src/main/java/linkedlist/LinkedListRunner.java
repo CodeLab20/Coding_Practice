@@ -1,5 +1,7 @@
 package linkedlist;
 
+import java.util.Arrays;
+
 public class LinkedListRunner {
     public static void main(String[] args) {
         String[]  str = new String[]{"A", "B", "C"};
@@ -31,9 +33,12 @@ public class LinkedListRunner {
             System.out.println(ex.getMessage());
         }
 
-
-
         System.out.println("Central Element:: " + LinkedListOperations.findCentralElement(lst));
+
+        lst.reverse();
+        System.out.println("Reversed List:" + lst);
+
+        System.out.println("Array:" + Arrays.toString(lst.toArray()));
 
     }
 }

@@ -1,5 +1,8 @@
 package linkedlist;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Singly Linked List
  * @param <T>
@@ -90,6 +93,9 @@ public class LinkedList<T> {
     {
         validate(idx);
 
+        if(head == null)
+            return;
+
         if(idx == 0)
             deleteHead();
 
@@ -109,6 +115,37 @@ public class LinkedList<T> {
             node = node.getNext();
             count++;
         }
+
+    }
+
+    public void reverse()
+    {
+        Node<T> prev = null;
+        Node<T> current = head;
+        Node<T> next = null;
+
+        while(current != null){
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+
+        head = prev;
+    }
+
+    public T[] toArray()
+    {
+        List<T> list = new ArrayList<>();
+        Node<T> tmp = head;
+
+        while(tmp != null)
+        {
+            list.add(tmp.getData());
+            tmp = tmp.getNext();
+        }
+
+        return (T[]) list.toArray();
 
     }
 

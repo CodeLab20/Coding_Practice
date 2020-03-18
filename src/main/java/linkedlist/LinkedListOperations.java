@@ -25,6 +25,4 @@ public class LinkedListOperations<T> {
         }
         return slow;
     }
-
-
 }
